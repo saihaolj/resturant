@@ -31,4 +31,10 @@ public class UserMapperTests {
         Integer rows = userMapper.insert(user);
         System.out.println(rows);
     }
+
+    @Test
+    public void findByUsername(){
+        User user = userMapper.findByUsername("zhangsan");
+        System.out.println(user);
+    }
 }

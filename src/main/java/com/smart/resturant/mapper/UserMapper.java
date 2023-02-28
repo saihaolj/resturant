@@ -3,7 +3,7 @@ package com.smart.resturant.mapper;
 import com.smart.resturant.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
-/** 用户木块的持久层接口 */
+/** 用户模块的持久层接口 */
 //@Mapper
 public interface UserMapper {
     /**
