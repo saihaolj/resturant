@@ -4,7 +4,7 @@ import com.smart.resturant.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /** 用户模块的持久层接口 */
-//@Mapper
+@Mapper
 public interface UserMapper {
     /**
      * 插入用户的数据
