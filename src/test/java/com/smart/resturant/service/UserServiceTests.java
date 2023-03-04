@@ -29,7 +29,7 @@ public class UserServiceTests {
     public void reg(){
         try {
             User user = new User();
-            user.setUsername("lisi");
+            user.setUsername("zhaoliu");
             user.setPassword("123");
             userService.reg(user);
             System.out.println("OK");
@@ -40,6 +40,12 @@ public class UserServiceTests {
             System.out.println(e.getMessage());
             throw new RuntimeException(e);
         }
+    }
+
+    @Test
+    public void login(){
+        User user = userService.login("lisi", "123");
+        System.out.println(user);
     }
 
 }

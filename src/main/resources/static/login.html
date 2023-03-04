@@ -51,7 +51,8 @@
           <input type="password" name="pwd" value="" class="loginipt pwd">
           <span class="text">请输入您的密码</span>
         </label>
-        <button type="submit" name="login" value="" class="button btn-login" onClick="location.href='mem.html'">登录</button>
+<!--        <button type="submit" name="login" value="" class="button btn-login" onClick="location.href='mem.html'">登录</button>-->
+        <button type="submit" name="login" value="" class="button btn-login">登录</button>
         <p class="mt20"><label for="remember"><input name="" type="checkbox" id="remember" value="" checked> 记住我</label><a href="forgot.html" class="fr"> 忘记密码？</a></p>
         <p class="mt10 tr">还没有账号？<a href="reg.html" class="o">注册</a></p>
       </div>
@@ -68,6 +69,31 @@
     <div class="orc fr"><img src="images/img2.jpg" width="63"><img src="images/img3.jpg" width="63"></div>
   </div>
 </div>
-<script src="js/jquery.js"></script>
-<script src="js/Action.js"></script>
+<script type="text/javascript">
+  $("#button btn-login").click(function () {
+    $.ajax({
+      url:"/resturant/login",
+      type:$("#boxbd").serialize(),
+      data:"JSON",
+      dataType:"",
+      success:function (json){
+        if(json.state == 200){
+          alert("登录成功！");
+          // 跳转到系统主页index.html
+          // 相对路径俩确定跳转的页面
+          location.href = "index.html";
+        } else {
+          alert("登录失败！");
+        }
+      },
+      error:function (xhr) {
+        alert("登录时产生未知的异常" + xhr.message)
+
+      }
+    });
+  });
+</script>
+<!--<script src="js/jquery.js"></script>-->
+<!--<script src="js/Action.js"></script>-->
+</body>
 </html>

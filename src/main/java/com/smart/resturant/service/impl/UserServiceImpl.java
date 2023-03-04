@@ -4,6 +4,8 @@ import com.smart.resturant.entity.User;
 import com.smart.resturant.mapper.UserMapper;
 import com.smart.resturant.service.IUserService;
 import com.smart.resturant.service.ex.InsertException;
+import com.smart.resturant.service.ex.PasswordNotMatchException;
+import com.smart.resturant.service.ex.UserNotFoundException;
 import com.smart.resturant.service.ex.UsernameDuplicatedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,7 +59,41 @@ public class UserServiceImpl implements IUserService {
             throw new InsertException("在用户注册过程中发生了未知的异常");
         }
 
+    }
 
+    @Override
+    public User login(String username, String password) {
+        // 根据用户名称来查询用户的数据是否存在，如果不存在则抛出异常
+        User result = userMapper.findByUsername(username);
+        if(result == null) {
+            throw new UserNotFoundException("用户数据不存在");
+        }
+        // 检测用户的密码是否匹配
+        // 1.先获取到数据库中的加密之后的密码
+        String oldPassword = result.getPassword();
+        // 2.和用户传递过来的密码进行比较
+        // 2.1 先获取盐值：上一次在注册的时候所自动生成的盐值
+        String salt = result.getSalt();
+        // 2.2 将用户的密码按照相同的md5算法规则进行加密
+        String newMd5Password = getMD5Password(password, salt);
+        // 3.将密码进行比较
+        if(!newMd5Password.equals(oldPassword)){
+            throw new PasswordNotMatchException("用户密码错误！");
+        }
+
+        // 判断is_delete字段的值是否为1，表示被标记为已删除
+        if(result.getIsDelete() == 1){
+            throw new UserNotFoundException("用户数据不存在");
+        }
+
+        // 调用mapper层的findByUsername来查询用户的数据
+        User user = new User();
+        user.setUid(result.getUid());
+        user.setUsername(result.getUsername());
+        user.setAvatar(result.getAvatar());
+
+        // 将当前的用户数据返回，返回的数据为了辅助其他页面做数据展示使用（uid，username，avatar）
+        return user;
     }
 
     /** 定义一个md5算法的加密处理 */

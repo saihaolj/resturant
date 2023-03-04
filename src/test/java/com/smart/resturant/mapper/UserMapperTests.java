@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 // @SpringBootTest：表示标注当前的类是一个测试类，不会随同项目一块打包
@@ -28,7 +27,7 @@ public class UserMapperTests {
     @Test
     public void insert(){
         User user = new User();
-        user.setUsername("zhangsan");
+        user.setUsername("test000");
         user.setPassword("123");
         Integer rows = userMapper.insert(user);
         System.out.println(rows);

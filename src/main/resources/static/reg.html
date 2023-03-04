@@ -48,7 +48,8 @@
           <input type="password" name="pwd" value="" class="loginipt key pwd">
           <span class="text">请输入您的密码</span>
         </label>
-        <button type="submit" name="login" value="" class="button btn-reg" onClick="location.href='mem.html'">立即注册</button>
+<!--        <button type="submit" name="login" value="" class="button btn-reg" onClick="location.href='mem.html'">立即注册</button>-->
+        <button type="submit" name="login" value="" class="button btn-reg">立即注册</button>
         <p class="mt20 tc">注册则表示同意<a href="#" class="o">《会员条款》</a></p>
         <div class="ohter"><span class="ohtertxt">或</span></div>
         <div class="Prompt" style="padding:0 0 10px">使用以上社交网络帐号登录</div>
@@ -71,6 +72,32 @@
     <div class="orc fr"><img src="images/img2.jpg" width="63"><img src="images/img3.jpg" width="63"></div>
   </div>
 </div>
-<script src="js/jquery.js"></script>
-<script src="js/Action.js"></script>
+<script type="text/javascript">
+  //  1.监听注册按钮是否被点击，如果被点击可以执行一个方法
+  $("#button btn-reg").click(function () {
+    // 2.发送Ajax（）的异步请求来完成用户的注册功能
+    console.log($("#loginbox").serialize())
+    $.ajax({
+      url:"/resturant/reg",
+      type:"POST",
+      data:$("#loginbox").serialize(),
+      dataType:"JSON",
+      success:function (json) {
+        if(json.state == 200){
+          alert("注册成功！");
+        } else {
+          alert("注册失败！");
+        }
+      },
+      error:function (xhr) {
+        alert("注册时产生未知的错误！" + xhr.status);
+      }
+    });
+
+  });
+
+</script>
+<!--<script src="js/jquery.js"></script>-->
+<!--<script src="js/Action.js"></script>-->
+</body>
 </html>
