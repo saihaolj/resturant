@@ -19,4 +19,11 @@ public interface UserMapper {
      * @return 如果找到对应的用户，则返回用户的数据；如果没有找到，则返回null值
      */
     User findByUsername(String username);
+
+    /**
+     * 根据用户uid查询用户的数据
+     * @param uid 用户uid
+     * @return 如果找到对应的用户，则返回用户的数据；如果没有找到，则返回null值
+     */
+    User findByUid(Integer uid);
 }

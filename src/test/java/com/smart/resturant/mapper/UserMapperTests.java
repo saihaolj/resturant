@@ -38,4 +38,10 @@ public class UserMapperTests {
         User user = userMapper.findByUsername("zhangsan");
         System.out.println(user);
     }
+
+    @Test
+    public void findByUid(){
+        User user = userMapper.findByUid(11);
+        System.out.println(user);
+    }
 }

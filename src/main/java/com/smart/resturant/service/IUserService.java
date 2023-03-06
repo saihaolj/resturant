@@ -14,7 +14,16 @@ public interface IUserService {
      * 用户登录功能
      * @param username 用户名
      * @param password 用户密码
-     * @return 当前匹配的用户数据，如果没有则范围null值
+     * @return 当前匹配的用户数据，如果没有则返回null值
      */
     User login(String username , String password);
+
+    /**
+     * 查询用户个人信息功能
+     * @param uid 用户uid
+     * @return 当前匹配的用户数据，如果没有则返回null值
+     */
+    User userMessage(Integer uid);
+
+
 }

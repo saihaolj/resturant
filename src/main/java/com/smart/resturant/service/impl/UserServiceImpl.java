@@ -96,6 +96,11 @@ public class UserServiceImpl implements IUserService {
         return user;
     }
 
+    @Override
+    public User userMessage(Integer uid) {
+        return null;
+    }
+
     /** 定义一个md5算法的加密处理 */
     private String getMD5Password(String password , String salt){
         // md5加密算法方法的调用（进行三次加密）

@@ -15,6 +15,7 @@ public class User extends BaseEntity implements Serializable {
     private Integer gender;
     private String avatar;
     private Integer isDelete;
+    private Integer role;
 
     // get、set、equals、hashCode、toString方法
     public Integer getUid() {
@@ -89,18 +90,26 @@ public class User extends BaseEntity implements Serializable {
         this.isDelete = isDelete;
     }
 
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         User user = (User) o;
-        return Objects.equals(uid, user.uid) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(salt, user.salt) && Objects.equals(phone, user.phone) && Objects.equals(email, user.email) && Objects.equals(gender, user.gender) && Objects.equals(avatar, user.avatar) && Objects.equals(isDelete, user.isDelete);
+        return Objects.equals(uid, user.uid) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(salt, user.salt) && Objects.equals(phone, user.phone) && Objects.equals(email, user.email) && Objects.equals(gender, user.gender) && Objects.equals(avatar, user.avatar) && Objects.equals(isDelete, user.isDelete) && Objects.equals(role, user.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), uid, username, password, salt, phone, email, gender, avatar, isDelete);
+        return Objects.hash(super.hashCode(), uid, username, password, salt, phone, email, gender, avatar, isDelete, role);
     }
 
     @Override
@@ -115,6 +124,7 @@ public class User extends BaseEntity implements Serializable {
                 ", gender=" + gender +
                 ", avatar='" + avatar + '\'' +
                 ", isDelete=" + isDelete +
+                ", role=" + role +
                 '}';
     }
 }

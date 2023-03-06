@@ -95,9 +95,10 @@ transition: opacity ease-in-out 200ms;}
 .foot2 .txt{ font-size:12px;}
 
 /*login*/
-.loginwrapper{ height:564px; background:url(../images/img4.jpg) no-repeat center; position:relative;}
-.loginwrapper .wrap{ height:100%;}
-.loginbox{ width:390px; height:550px; position:absolute; right:0; bottom:0; background:url(../images/white15.png);}
+.loginwrapper{ height:564px; background:url(../images/img4.jpg) no-repeat center; position:relative;background-size: 1450px}
+.loginwrapper .wrap{ height: 100%;}
+/*.loginbox{ width:390px; height:550px; position:absolute; right:0; bottom:0; background:url(../images/white15.png);}*/
+.loginbox{ width:390px; height:550px; position:absolute; right:0; bottom:0; background: #efefef; opacity: 0.7}
 .loginbox .hd{ height:30px; line-height:30px; text-align:center; color:#FFF; font-size:30px; padding:35px 0;}
 
 .loginbox .ico{ width:63px; height:63px; display:inline-block; margin:8px 20px; text-indent:-999px; overflow:hidden;}

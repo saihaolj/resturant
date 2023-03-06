@@ -4,8 +4,8 @@
 <meta name="keywords" content="">
 <meta name="description" content="mezz">
 <meta name="author" content="mezz">
-<link href="css/css.css" rel="stylesheet">
-<link href="css/chosen.css" rel="stylesheet">
+<link href="../css/css.css" rel="stylesheet">
+<link href="../css/chosen.css" rel="stylesheet">
 <!--[if lt IE 9]>
     <link href="css/ie.css" rel="stylesheet" type="text/css" >
     <meta http-equiv="X-UA-Compatible" content="IE=8" >
@@ -26,9 +26,9 @@
         </label>
         <button type="submit" class="button btn-search">&#xe628;</button>
       </form>
-      <a href="#"><em><img src="images/sb.png"></em>  &nbsp;&nbsp;发布我的饭局</a>
+      <a href="#"><em><img src="../images/sb.png"></em>  &nbsp;&nbsp;发布我的饭局</a>
       <div class="user">
-        <span class="clearfix"><span class="userimg"><img src="upload/img12.png"><i></i></span>
+        <span class="clearfix"><span class="userimg"><img src="../upload/img12.png"><i></i></span>
         <a href="javascript:;" class="fr">设计--麻  <em>&#xe607;</em></a></span>
         <ul class="topslide">
           <li><em>&#xe627;</em><a href="mem.html">个人设置</a></li>
@@ -51,14 +51,51 @@
   <div class="Application">
     <table class="bind-wrap Verified-bind-wrap">
       <tr>
-        <th valign="top"><p class="mt10"><em class="myfont ff4800" style="font-size:100px;">&#xe64b;</em></p></th>
+        <th>真实姓名：</th>
         <td>
-          <p class="f24 c333">您的资料已提交，请等待客服人员审核！</p>
-          <p class="mt10">绑定成功 <span class="ff4800" id="show">5</span> 秒后返回个人中心页面  点击 <a href="mem.html" class="ff4800">立即返回</a></p>
-          <p class="Release-submit mt40"><button type="button" name="" value="" class="button btn-submit Appbtn">完成</button></p>
+          <input type="text" value="" name="" class="ipt">
         </td>
       </tr>
-      
+      <tr>
+        <th>身份证号码：</th>
+        <td>
+          <input type="text" value="" name="" class="ipt">
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">身份证图片正面：</th>
+        <td>
+          <div class="ID-card-photo img fl"><img id="ImgPr"></div>
+          <div class="upfilebox fl">
+            <label class="btn-upfiles"><input type="file" name="photo" id="up" />选择照片</label>
+            <p class="mt10 f12">仅支持JPG、GIF、PNG、JPEG、BMP格式，文件小于4M</p>
+          </div>
+          <div class="demoimg fr">
+            <p class="demo"><img src="../upload/img22.jpg"></p>
+            示例照片
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">身份证图片反面：</th>
+        <td>
+          <div class="ID-card-photo img fl"><img id="ImgPr"></div>
+          <div class="upfilebox fl">
+            <label class="btn-upfiles"><input type="file" name="photo" id="up" />选择照片</label>
+            <p class="mt10 f12">仅支持JPG、GIF、PNG、JPEG、BMP格式，文件小于4M</p>
+          </div>
+          <div class="demoimg fr">
+            <p class="demo"><img src="../upload/img22.jpg"></p>
+            示例照片
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>
+          <p class="Release-submit mt25 tc"><button type="button" name="" value="" class="button btn-submit Appbtn" onClick="location.href='Verified-bind-done.html'">下一步</button></p>
+        </td>
+      </tr>
     </table>
     
   </div>
@@ -110,17 +147,18 @@
         </ul>
       </div>
       <div class="fr">
-        <img src="images/img2.jpg">
-        <img src="images/img3.jpg">
+        <img src="../images/img2.jpg">
+        <img src="../images/img3.jpg">
       </div>
     </div>
     <div class="gotop">&#xe608;</div>
   </div>
   <div class="foot tc">Copyright © 2003-2015 XXX, All Rights Reserved</div>  
-<script src="js/jquery.js"></script>
-<script src="js/Action.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/Action.js"></script>
+<script src="../js/upfiles.js"></script>
 
-<script src="js/chosen.jquery.js"></script>
+<script src="../js/chosen.jquery.js"></script>
 <script type="text/javascript">
 $(document).ready(function($){
 	//select 样式美化
@@ -129,18 +167,11 @@ $(document).ready(function($){
 	}
 	for (var selector in config) {
 		$(selector).chosen(config[selector]);
-	}	
+	}
+	$("#up").uploadPreview({
+		Img: "ImgPr",
+	});
 });
-//倒计时跳转
-	var t=5;//设定跳转的时间 
-	setInterval("refer()",1000); //启动1秒定时 
-	function refer(){
-		if(t==0){ 
-		location="mem.html"; //#设定跳转的链接地址 
-	} 
-	document.getElementById('show').innerHTML=""+t; // 显示倒计时 
-	t--; // 计数器递减 
-	} 
 </script>
 </body>
 </html>
