@@ -97,8 +97,19 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User userMessage(Integer uid) {
-        return null;
+    public User getByUid(Integer uid) {
+        User result = userMapper.findByUid(uid);
+        if(result == null || result.getIsDelete() == 1){
+            throw new UserNotFoundException("用户数据不存在！");
+        }
+        User user = new User();
+        user.setUsername(result.getUsername());
+        user.setPhone(result.getPhone());
+        user.setEmail(result.getEmail());
+        user.setGender(result.getGender());
+        user.setRole(result.getRole());
+
+        return user;
     }
 
     /** 定义一个md5算法的加密处理 */

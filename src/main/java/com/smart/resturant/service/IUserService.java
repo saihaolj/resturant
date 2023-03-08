@@ -23,7 +23,7 @@ public interface IUserService {
      * @param uid 用户uid
      * @return 当前匹配的用户数据，如果没有则返回null值
      */
-    User userMessage(Integer uid);
+    User getByUid(Integer uid);
 
 
 }

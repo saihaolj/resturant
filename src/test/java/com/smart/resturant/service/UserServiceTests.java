@@ -48,4 +48,10 @@ public class UserServiceTests {
         System.out.println(user);
     }
 
+    @Test
+    public void getByUid(){
+        User result = userService.getByUid(1);
+        System.err.println(result);
+    }
+
 }
