@@ -7,18 +7,18 @@ public class Address extends BaseEntity implements Serializable {
     private Integer aid;
     private Integer uid;
     private String name;
-    private String province_name;
-    private String province_code;
-    private String city_name;
-    private String city_code;
-    private String area_name;
-    private String area_code;
+    private String provinceName;
+    private String provinceCode;
+    private String cityName;
+    private String cityCode;
+    private String areaName;
+    private String areaCode;
     private String zip;
     private String address;
     private String phone;
     private String tel;
     private String tag;
-    private Integer is_default;
+    private Integer isDefault;
 
     public Integer getAid() {
         return aid;
@@ -44,52 +44,52 @@ public class Address extends BaseEntity implements Serializable {
         this.name = name;
     }
 
-    public String getProvince_name() {
-        return province_name;
+    public String getProvinceName() {
+        return provinceName;
     }
 
-    public void setProvince_name(String province_name) {
-        this.province_name = province_name;
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
     }
 
-    public String getProvince_code() {
-        return province_code;
+    public String getProvinceCode() {
+        return provinceCode;
     }
 
-    public void setProvince_code(String province_code) {
-        this.province_code = province_code;
+    public void setProvinceCode(String provinceCode) {
+        this.provinceCode = provinceCode;
     }
 
-    public String getCity_name() {
-        return city_name;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCity_name(String city_name) {
-        this.city_name = city_name;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
-    public String getCity_code() {
-        return city_code;
+    public String getCityCode() {
+        return cityCode;
     }
 
-    public void setCity_code(String city_code) {
-        this.city_code = city_code;
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
     }
 
-    public String getArea_name() {
-        return area_name;
+    public String getAreaName() {
+        return areaName;
     }
 
-    public void setArea_name(String area_name) {
-        this.area_name = area_name;
+    public void setAreaName(String areaName) {
+        this.areaName = areaName;
     }
 
-    public String getArea_code() {
-        return area_code;
+    public String getAreaCode() {
+        return areaCode;
     }
 
-    public void setArea_code(String area_code) {
-        this.area_code = area_code;
+    public void setAreaCode(String areaCode) {
+        this.areaCode = areaCode;
     }
 
     public String getZip() {
@@ -132,12 +132,12 @@ public class Address extends BaseEntity implements Serializable {
         this.tag = tag;
     }
 
-    public Integer getIs_default() {
-        return is_default;
+    public Integer getIsDefault() {
+        return isDefault;
     }
 
-    public void setIs_default(Integer is_default) {
-        this.is_default = is_default;
+    public void setIsDefault(Integer isDefault) {
+        this.isDefault = isDefault;
     }
 
     @Override
@@ -146,12 +146,12 @@ public class Address extends BaseEntity implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Address address1 = (Address) o;
-        return Objects.equals(aid, address1.aid) && Objects.equals(uid, address1.uid) && Objects.equals(name, address1.name) && Objects.equals(province_name, address1.province_name) && Objects.equals(province_code, address1.province_code) && Objects.equals(city_name, address1.city_name) && Objects.equals(city_code, address1.city_code) && Objects.equals(area_name, address1.area_name) && Objects.equals(area_code, address1.area_code) && Objects.equals(zip, address1.zip) && Objects.equals(address, address1.address) && Objects.equals(phone, address1.phone) && Objects.equals(tel, address1.tel) && Objects.equals(tag, address1.tag) && Objects.equals(is_default, address1.is_default);
+        return Objects.equals(aid, address1.aid) && Objects.equals(uid, address1.uid) && Objects.equals(name, address1.name) && Objects.equals(provinceName, address1.provinceName) && Objects.equals(provinceCode, address1.provinceCode) && Objects.equals(cityName, address1.cityName) && Objects.equals(cityCode, address1.cityCode) && Objects.equals(areaName, address1.areaName) && Objects.equals(areaCode, address1.areaCode) && Objects.equals(zip, address1.zip) && Objects.equals(address, address1.address) && Objects.equals(phone, address1.phone) && Objects.equals(tel, address1.tel) && Objects.equals(tag, address1.tag) && Objects.equals(isDefault, address1.isDefault);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), aid, uid, name, province_name, province_code, city_name, city_code, area_name, area_code, zip, address, phone, tel, tag, is_default);
+        return Objects.hash(super.hashCode(), aid, uid, name, provinceName, provinceCode, cityName, cityCode, areaName, areaCode, zip, address, phone, tel, tag, isDefault);
     }
 
     @Override
@@ -160,18 +160,18 @@ public class Address extends BaseEntity implements Serializable {
                 "aid=" + aid +
                 ", uid=" + uid +
                 ", name='" + name + '\'' +
-                ", province_name='" + province_name + '\'' +
-                ", province_code='" + province_code + '\'' +
-                ", city_name='" + city_name + '\'' +
-                ", city_code='" + city_code + '\'' +
-                ", area_name='" + area_name + '\'' +
-                ", area_code='" + area_code + '\'' +
+                ", provinceName='" + provinceName + '\'' +
+                ", provinceCode='" + provinceCode + '\'' +
+                ", cityName='" + cityName + '\'' +
+                ", cityCode='" + cityCode + '\'' +
+                ", areaName='" + areaName + '\'' +
+                ", areaCode='" + areaCode + '\'' +
                 ", zip='" + zip + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", tel='" + tel + '\'' +
                 ", tag='" + tag + '\'' +
-                ", is_default=" + is_default +
+                ", isDefault=" + isDefault +
                 '}';
     }
 }
